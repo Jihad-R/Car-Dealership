@@ -1,6 +1,7 @@
 package org.yearup.model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Dealership {
     private String name;
@@ -15,51 +16,113 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public ArrayList<Vehicle> getVehicleByPrice(double min,double max)
-    {
-        return null;
+    public ArrayList<Vehicle> getVehicleByPrice(double min, double max) {
+        ArrayList<Vehicle> vehiclesInRange = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                vehiclesInRange.add(vehicle);
+            }
+
+        }
+
+        return vehiclesInRange;
     }
 
-    public ArrayList<Vehicle> getVehicleByMakeModel(String make,String model)
-    {
-        return null;
-    }
-    public ArrayList<Vehicle> getVehicleByYear(int min,int max)
-    {
-        return null;
-    }
-    public ArrayList<Vehicle> getVehicleByMakeModel(String color) {return null;}
-    public ArrayList<Vehicle> getVehicleByMileage(int min,int max)
-    {
-        return null;
-    }
-    public ArrayList<Vehicle> getVehicleByType(String vehicleType)
-    {
-        return null;
-    }
-    public ArrayList<Vehicle> getAllVehicle()
-    {
+    public ArrayList<Vehicle> getVehicleByMakeModel(String make, String model) {
 
-        return inventory;
+        ArrayList<Vehicle> vehiclesByMakeModel = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory) {
+
+            if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)) {
+                vehiclesByMakeModel.add(vehicle);
+            }
+
+        }
+
+        return vehiclesByMakeModel;
     }
 
-    public void addVehicle(Vehicle vehicle)
-    {
-        inventory.add(vehicle);
-    }
+    public ArrayList<Vehicle> getVehicleByYear(int min, int max) {
+        ArrayList<Vehicle> vehiclesInRange = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
 
-    public void removeVehicle()
-    {}
+            if (vehicle.getYear() >= min && vehicle.getYear() <= max) {
+                vehiclesInRange.add(vehicle);
+            }
+        }
 
-    public String getName() {
-        return name;
+        return vehiclesInRange;
     }
+        public ArrayList<Vehicle> getVehicleByColor(String color){
 
-    public String getAddress() {
-        return address;
-    }
+            ArrayList<Vehicle> vehicles = new ArrayList<>();
+            for (Vehicle vehicle: inventory) {
 
-    public String getPhone() {
-        return phone;
+                if (vehicle.getColor().equalsIgnoreCase(color)) {
+                    vehicles.add(vehicle);
+                }
+            }
+
+                return vehicles;
+
+        }
+        public ArrayList<Vehicle> getVehicleByMileage ( int min, int max)
+        {
+            ArrayList<Vehicle> vehiclesInRange = new ArrayList<>();
+            for (Vehicle vehicle : inventory) {
+
+                if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
+                    vehiclesInRange.add(vehicle);
+                }
+
+            }
+
+            return vehiclesInRange;
+
+        }
+        public ArrayList<Vehicle> getVehicleByType (String vehicleType)
+        {
+            ArrayList<Vehicle> vehicles = new ArrayList<>();
+            for (Vehicle vehicle: inventory) {
+
+                if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
+                    vehicles.add(vehicle);
+                }
+            }
+
+            return vehicles;
+        }
+        public ArrayList<Vehicle> getAllVehicle ()
+        {
+
+            return inventory;
+        }
+
+        public void addVehicle (Vehicle vehicle)
+        {
+            inventory.add(vehicle);
+        }
+
+        public void removeVehicle (int vin)
+        {
+            for (int i=0; i< inventory.size();i++){
+                if(inventory.get(i).getVin() == vin){
+                    inventory.remove(i);
+                }
+            }
+        }
+
+        public String getName () {
+            return name;
+        }
+
+        public String getAddress () {
+            return address;
+        }
+
+        public String getPhone () {
+            return phone;
+        }
     }
-}
