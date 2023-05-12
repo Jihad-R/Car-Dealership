@@ -28,8 +28,7 @@ public class Dealership {
     {
         return null;
     }
-    public ArrayList<Vehicle> getVehicleByMakeModel(String color)
-    {}
+    public ArrayList<Vehicle> getVehicleByMakeModel(String color) {return null;}
     public ArrayList<Vehicle> getVehicleByMileage(int min,int max)
     {
         return null;
