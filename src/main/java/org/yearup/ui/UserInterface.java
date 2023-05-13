@@ -121,6 +121,7 @@ public class UserInterface {
         System.out.println("-".repeat(71));
 
         for (Vehicle vehicle : vehicles) {
+
             stringBuilder.append(String.format("%-7d %-7d %-10s %-8s %-8s %-7s %-10d %-7.2f\n"+
                             "-".repeat(71)+"\n", vehicle.getVin(), vehicle.getYear() ,vehicle.getModel(),
                     vehicle.getMake(), vehicle.getVehicleType(), vehicle.getColor(),
@@ -147,6 +148,8 @@ public class UserInterface {
     // Method to get all the vehicles within a certain price range
     public void processGetByPriceRequest() {
 
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REQUEST BY PRICE RANGE ~~"+ColorCodes.RESET);
         // Initialize the variables to store the min and max values of the price range
         double min, max;
 
@@ -170,6 +173,9 @@ public class UserInterface {
 
     // Method to get all the vehicles of a specific make and model
     public void processGetByMakeModelRequest() {
+
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REQUEST BY Make-Model ~~"+ColorCodes.RESET);
         // Initialize the variables to store the make and model of the vehicle
         String make, model;
 
@@ -193,6 +199,8 @@ public class UserInterface {
     // Method to get all the vehicles within a certain year range
     public void processGetByYearRequest() {
 
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REQUEST BY YEAR RANGE ~~"+ColorCodes.RESET);
         // Initialize the variables to store the min and max values of the year range
         int min, max;
 
@@ -215,6 +223,9 @@ public class UserInterface {
 
     // Method to get all the vehicles of a specific color
     public void processGetByColorRequest() {
+
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REQUEST BY COLOR ~~"+ColorCodes.RESET);
         // Initialize the variable to store the color of the vehicle
         String color;
 
@@ -235,6 +246,8 @@ public class UserInterface {
 
     public void processGetByMileageRequest() {
 
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REQUEST BY MILEAGE RANGE ~~"+ColorCodes.RESET);
         // Initialize the variables to store the min and max values of the mileage range
         int min, max;
 
@@ -258,6 +271,8 @@ public class UserInterface {
     // Prompt user to enter vehicle type
     public void processGetByVehicleTypeRequest() {
 
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REQUEST BY VEHICLE TYPE ~~"+ColorCodes.RESET);
         // Initialize the variable to store the type of the vehicle
         String vehicleType;
 
@@ -278,6 +293,8 @@ public class UserInterface {
 
     public void processAddVehicleRequest() {
 
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ ADD A VEHICLE ~~"+ColorCodes.RESET);
         // Initialize the variable to store the vehicle details
         int vin;
         int year;
@@ -318,6 +335,8 @@ public class UserInterface {
 
     public void processRemoveVehicleRequest() {
 
+        System.out.println(ColorCodes.WHITE_BACKGROUND+ColorCodes.BLACK+
+                "~~ REMOVE A VEHICLE ~~"+ColorCodes.RESET);
         int vin;
         Scanner scanVin = new Scanner(System.in);
 
@@ -330,6 +349,7 @@ public class UserInterface {
 
         // Save the updated dealership inventory to file
         dealershipFileManager.saveDealership(dealership);
+
 
     }
 

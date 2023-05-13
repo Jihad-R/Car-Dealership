@@ -39,7 +39,50 @@ Once you have Java installed, open the IntellJ IDE. Then navigate to the main.ja
 This code snippet is interesting because it demonstrates file handling operations in Java. It uses a `FileWriter` to write dealership data to a file (`inventory.csv`). The code ensures that the existing file is overwritten to update the data accurately. It also utilizes string formatting to construct the data that is written to the file in a readable and consistent format. Exception handling is implemented to handle any potential errors that may occur during file operations, providing informative error messages. All in all, the code snippet showcases important concepts such as file handling, data persistence, string formatting, and exception handling.
 
 ## CLI Screenshots 📷
-`COMING SOON!`
+### Home Screen UI
+
+![HomeScreen UI](screenshots/homeCar.png)
+
+### List All Vehicles
+
+![ListAllVehicle](screenshots/allCars.png)
+
+### Add Vehicle
+
+![AddVehicle](screenshots/AddCar.png)
+
+### Remove Vehicle
+
+![RemoveVehicle](screenshots/RemoveCar.png)
+
+### Find Vehicle by Price
+
+![findVehiclebyPrice](screenshots/priceCar.png)
+
+### Find Vehicle by Year
+
+![findVehiclebyYear](screenshots/yearCar.png)
+
+#### Find Vehicle by Mileage
+
+![findVehiclebyMileage](screenshots/MileageCar.png)
+
+#### Find Vehicle by Color
+
+![findVehiclebyColor](screenshots/colorCar.png)
+
+#### Find Vehicle by Type
+
+![findVehiclebyColor](screenshots/typeCar.png)
+
+### Find Vehicle by Make-Model
+
+![findVehiclebyMakeModel](screenshots/makemodel.png)
+
+### Exit the application
+
+![exitApplication](screenshots/exitCar.png)
+
 ## How to use📋
 
 Once the application is running, you can interact with the Dealership Management System through the command-line interface. The available commands are:
