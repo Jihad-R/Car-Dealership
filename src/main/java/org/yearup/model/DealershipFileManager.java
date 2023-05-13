@@ -1,11 +1,16 @@
 package org.yearup.model;
 
+import org.yearup.JavaHelpers.ColorCodes;
+
+import java.awt.*;
 import java.io.*;
 import java.util.Scanner;
 
 public class DealershipFileManager {
 
     private String[] dealershipDetails;
+
+    // Read dealership details from file and create a Dealership object
     public Dealership getDealership() {
 
         FileInputStream fileInputStream = null;
@@ -47,6 +52,7 @@ public class DealershipFileManager {
         return dealership;
     }
 
+    // Save dealership details to the file
     public void saveDealership(Dealership dealership) {
         FileWriter fileWriter = null;
 
@@ -55,19 +61,19 @@ public class DealershipFileManager {
             fileWriter.write(String.format("%s|%s|%s\n",dealershipDetails[0],dealershipDetails[1],dealershipDetails[2]));
             for (Vehicle vehicle : dealership.getAllVehicle()) {
                 String s = String.format("%d|%d|%s|%s|%s|%s|%d|%.2f\n", vehicle.getVin(), vehicle.getYear(),
-                        vehicle.getModel(), vehicle.getMake(), vehicle.getVehicleType(), vehicle.getColor(),
+                        vehicle.getMake(), vehicle.getModel() ,vehicle.getVehicleType(), vehicle.getColor(),
                         vehicle.getOdometer(), vehicle.getPrice());
                 fileWriter.write(s);
             }
         } catch (IOException e) {
-            System.out.println("Error occurred while writing to the file!");
+            System.out.println(ColorCodes.RED+"Error occurred while writing to the file!"+ColorCodes.RESET);
         } finally {
             if (fileWriter != null) {
                 try {
                     fileWriter.flush();
                     fileWriter.close();
                 } catch (IOException e) {
-                    System.out.println("Error occurred while closing the file!");
+                    System.out.println(ColorCodes.RED+"Error occurred while closing the file!"+ColorCodes.RESET);
                 }
             }
         }

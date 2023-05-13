@@ -1,7 +1,6 @@
 package org.yearup.model;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Dealership {
     private String name;
@@ -16,6 +15,7 @@ public class Dealership {
         this.phone = phone;
     }
 
+    // Get vehicles within a specified price range
     public ArrayList<Vehicle> getVehicleByPrice(double min, double max) {
         ArrayList<Vehicle> vehiclesInRange = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -29,6 +29,7 @@ public class Dealership {
         return vehiclesInRange;
     }
 
+    // Get vehicles by make and model
     public ArrayList<Vehicle> getVehicleByMakeModel(String make, String model) {
 
         ArrayList<Vehicle> vehiclesByMakeModel = new ArrayList<>();
@@ -44,6 +45,7 @@ public class Dealership {
         return vehiclesByMakeModel;
     }
 
+    // Get vehicles within a specified year range
     public ArrayList<Vehicle> getVehicleByYear(int min, int max) {
         ArrayList<Vehicle> vehiclesInRange = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -55,7 +57,9 @@ public class Dealership {
 
         return vehiclesInRange;
     }
-        public ArrayList<Vehicle> getVehicleByColor(String color){
+
+    // Get vehicles by color
+    public ArrayList<Vehicle> getVehicleByColor(String color){
 
             ArrayList<Vehicle> vehicles = new ArrayList<>();
             for (Vehicle vehicle: inventory) {
@@ -68,7 +72,9 @@ public class Dealership {
                 return vehicles;
 
         }
-        public ArrayList<Vehicle> getVehicleByMileage ( int min, int max)
+
+    // Get vehicles within a specified mileage range
+    public ArrayList<Vehicle> getVehicleByMileage ( int min, int max)
         {
             ArrayList<Vehicle> vehiclesInRange = new ArrayList<>();
             for (Vehicle vehicle : inventory) {
@@ -82,7 +88,9 @@ public class Dealership {
             return vehiclesInRange;
 
         }
-        public ArrayList<Vehicle> getVehicleByType (String vehicleType)
+
+    // Get vehicles of a specific type
+    public ArrayList<Vehicle> getVehicleByType (String vehicleType)
         {
             ArrayList<Vehicle> vehicles = new ArrayList<>();
             for (Vehicle vehicle: inventory) {
@@ -94,18 +102,22 @@ public class Dealership {
 
             return vehicles;
         }
-        public ArrayList<Vehicle> getAllVehicle ()
+
+    // Get all vehicles in the inventory
+    public ArrayList<Vehicle> getAllVehicle ()
         {
 
             return inventory;
         }
 
-        public void addVehicle (Vehicle vehicle)
+    // Add a vehicle to the inventory
+    public void addVehicle (Vehicle vehicle)
         {
             inventory.add(vehicle);
         }
 
-        public void removeVehicle (int vin)
+    // Remove a vehicle from the inventory based on VIN
+    public void removeVehicle (int vin)
         {
             for (int i=0; i< inventory.size();i++){
                 if(inventory.get(i).getVin() == vin){
@@ -114,15 +126,18 @@ public class Dealership {
             }
         }
 
-        public String getName () {
+    // Getter method for dealership name
+    public String getName () {
             return name;
         }
 
-        public String getAddress () {
+    // Getter method for dealership address
+    public String getAddress () {
             return address;
         }
 
-        public String getPhone () {
+    // Getter method for dealership phone number
+    public String getPhone () {
             return phone;
         }
     }

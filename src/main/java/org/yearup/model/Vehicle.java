@@ -21,34 +21,42 @@ public class Vehicle {
         this.price = price;
     }
 
+    // Getter for VIN
     public int getVin() {
         return vin;
     }
 
+    // Getter for year
     public int getYear() {
         return year;
     }
 
+    // Getter for make
     public String getMake() {
         return make;
     }
 
+    // Getter for model
     public String getModel() {
         return model;
     }
 
+    // Getter for vehicle type
     public String getVehicleType() {
         return vehicleType;
     }
 
+    // Getter for color
     public String getColor() {
         return color;
     }
 
+    // Getter for odometer reading
     public int getOdometer() {
         return odometer;
     }
 
+    // Getter for price
     public double getPrice() {
         return price;
     }
